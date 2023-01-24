@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE releve SYSTEM "file:/C:/Users/meggouri%20ismail/Desktop/II-BDCC/II-BDCC/Projet%20XML/ReleveDTD.dtd">
+<?xml-stylesheet type="text/xsl" href="ReleveXSLT.xslt"?>
+<releve RIB="0012546784545464454">
+    <dateReleve>2022-06-11</dateReleve>
+    <solde>2602</solde>
+    <operations dateDebut="2021-01-01" dateFin="2021-01-30">
+        <operation type="CREDIT" date="2021-01-01" montant="9000" description="Vers Espèce"></operation>
+        <operation type="DEBIT" date="2021-01-11" montant="3400" description="Chèque Guichet"></operation>
+        <operation type="DEBIT" date="2021-01-15" montant="120" description="Prélèvement Assurence"></operation>
+        <operation type="CREDIT" date="2021-01-25" montant="70000" description="Virement .."></operation>
+    </operations>
+</releve>

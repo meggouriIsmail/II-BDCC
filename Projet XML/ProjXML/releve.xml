@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="14.0.1" class="java.beans.XMLDecoder">
+ <object class="com.meggouri.Releve">
+  <void property="RIB">
+   <string>011112222333344445555666</string>
+  </void>
+  <void property="dateReleve">
+   <object class="java.util.Date">
+    <long>1674490951191</long>
+   </object>
+  </void>
+  <void property="operations">
+   <object class="java.util.ArrayList">
+    <void method="add">
+     <object class="com.meggouri.Operation">
+      <void property="date">
+       <object class="java.util.Date">
+        <long>1674490951191</long>
+       </object>
+      </void>
+      <void property="description">
+       <string>Vers Espèce</string>
+      </void>
+      <void property="montant">
+       <double>9000.0</double>
+      </void>
+      <void property="type">
+       <string>CREDIT</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.meggouri.Operation">
+      <void property="date">
+       <object class="java.util.Date">
+        <long>1674490951191</long>
+       </object>
+      </void>
+      <void property="description">
+       <string>Chèque Guichet</string>
+      </void>
+      <void property="montant">
+       <double>3400.0</double>
+      </void>
+      <void property="type">
+       <string>DEBIT</string>
+      </void>
+     </object>
+    </void>
+   </object>
+  </void>
+  <void property="solde">
+   <double>14500.0</double>
+  </void>
+ </object>
+</java>

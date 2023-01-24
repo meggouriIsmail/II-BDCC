@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ELEMENT releves (releve+)>
+<!ELEMENT releve (dateReleve, solde, operations)>
+<!ATTLIST releve RIB CDATA #REQUIRED>
+<!ELEMENT dateReleve (#PCDATA)>
+<!ELEMENT solde (#PCDATA)>
+<!ELEMENT operations (operation+)>
+<!ATTLIST operations dateDebut CDATA #REQUIRED>
+<!ATTLIST operations dateFin CDATA #REQUIRED>
+<!ELEMENT operation (#PCDATA)>
+<!ATTLIST operation type (CREDIT|DEBIT) #REQUIRED>
+<!ATTLIST operation date CDATA #REQUIRED>
+<!ATTLIST operation montant CDATA #REQUIRED>
+<!ATTLIST operation description CDATA #REQUIRED>

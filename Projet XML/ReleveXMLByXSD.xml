@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<releve xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="file:/C:/Users/meggouri%20ismail/Desktop/II-BDCC/II-BDCC/Projet%20XML/ReleveXSD.xsd" 
+    RIB="742852965845125210021">
+    <dateReleve>2022-06-11</dateReleve>
+    <solde>2602</solde>
+    <operations dateDebut="2021-01-01" dateFin="2021-01-30">
+        <operation type="CREDIT" date="2021-01-01" montant="9000" description="Vers Espèce"></operation>
+        <operation type="DEBIT" date="2021-01-11" montant="3400" description="Chèque Guichet"></operation>
+        <operation type="DEBIT" date="2021-01-15" montant="120" description="Prélèvement Assurence"></operation>
+        <operation type="CREDIT" date="2021-01-25" montant="70000" description="Virement .."></operation>
+    </operations>
+</releve>

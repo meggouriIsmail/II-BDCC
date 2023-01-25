@@ -1,7 +1,0 @@
-# Screen Shoots
-<img src="Projet XML/screens/getReleve.png" alt="getReleve">
-<img src="Projet XML/screens/getOperationByType.png" alt="getReleve">
-<img src="Projet XML/screens/getOperationByTypeSoap.png" alt="getReleve">
-<img src="Projet XML/screens/getReleveRest.png" alt="getReleve">
-<img src="Projet XML/screens/getOperationByTypeRest.png" alt="getReleve">
-<img src="Projet XML/screens/getOperByTypeRest.png" alt="getReleve">

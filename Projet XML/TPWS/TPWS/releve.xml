@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<releve RIB="011112222333344445555666">
+    <dateReleve>2023-01-24T14:34:37.057+01:00</dateReleve>
+    <solde>14500.0</solde>
+    <operations dateDebut="2023-01-24T14:34:37.059+01:00" dateFin="2023-01-24T14:34:37.059+01:00">
+        <operation date="2023-01-24T14:34:37.060+01:00" description="Vers Espèce" montant="9000.0" type="CREDIT"/>
+        <operation date="2023-01-24T14:34:37.060+01:00" description="Chèque Guichet" montant="3400.0" type="DEBIT"/>
+        <operation date="2023-01-24T14:34:37.060+01:00" description="Chèque Guichet" montant="1500.0" type="CREDIT"/>
+    </operations>
+</releve>

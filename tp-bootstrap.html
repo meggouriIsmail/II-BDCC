@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="El-Meggo" content="Web-Template">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" />
+    <title>TP-Bootstrap</title>
+</head>
+
+<body>
+    <!-- Nav bar with logo & menu -->
+    <div class="containers">
+        <nav class="navbar navbar-expand-lg navbar-expand-md navbar-dark bg-dark">
+            <a class="navbar-brand" href="#">Meggouri</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link font-weight-bold active" href="#">Home <span
+                                class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
+                            aria-haspopup="true" aria-expanded="false">Contact</a>
+                        <div class="dropdown-menu dropdown-menu-right bg-light">
+                            <a class="dropdown-item" href="https://www.instagram.com/?hl=en">Instagram</a>
+                            <a class="dropdown-item" href="#">Email</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item fa fa-whatsapp" href="#"><span class="pl-2">
+                                    +33457845125</span></a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <!-- end menu -->
+    <!-- Carousel Slider Pictures -->
+    <div class="jumbotron-fluid fonts">
+        <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+                <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="https://i.ytimg.com/vi/6-OFGQ9GLVA/maxresdefault.jpg" class="d-block w-100 decoration"
+                        alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <div class="animate__animated animate__fadeInLeft animate__slow">
+                            <h5 class="text-light float-md-left">First slide label</h5>
+                        </div>
+                        <p class="text-white text-justify float-md-left">Nulla vitae elit libero, a pharetra augue
+                            mollis interdum.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="https://cdn.videvo.net/videvo_files/images/preview_Hacker_code_whiteblack_07_Videvo.jpg"
+                        class="d-block w-100 decoration" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <div class="animate__animated animate__fadeInLeft animate__slow">
+                            <h5 class="text-light text-justify float-md-left">Second slide label</h5>
+                        </div>
+                        <p class="text-white text-justify float-md-left">Lorem ipsum dolor sit amet, consectetur
+                            adipiscing elit.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="https://ak.picdn.net/shutterstock/videos/2274038/thumb/8.jpg"
+                        class="d-block w-100 decoration" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <div class="animate__animated animate__fadeInLeft animate__slow">
+                            <h5 class="text-light text-justify float-md-left">Third slide label</h5>
+                        </div>
+                        <p class="text-light text-justify float-md-left">Praesent commodo cursus magna, vel scelerisque
+                            nisl consectetur.</p>
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+    <!-- end Carousel Slider -->
+    <!-- Container with head txt & txt -->
+    <div class="jumbotron text-center bg-light" style="margin-bottom: 0; border-radius: 0;">
+        <h2 class="text-dark fonts"><span class="text-primary">ABOUT</span> COMPANY</h2>
+        <p class="font-weight-normal p-1 pargfs text-dark">Business consulting excepteur sint occaecat cupidatat
+            consulting non proident,
+            sunt in<br> culpa qui officia deserunt laborum market.
+        </p>
+    </div>
+    <!-- end of Container-->
+    <!-- Container with head txt & txt -->
+    <div class="jumbotron p-4 bg-white text-center" style="margin-bottom: 0; border-radius: 0;">
+        <div class="container">
+            <div class="dropdown-divider"></div>
+            <div class="row">
+                <h5 class="col-lg-6 col-md-6 col-sm-12 col-xs-12 text-dark pargfs sizeFont">Trusted and professional
+                    business consultant to fulfill your dreams.</h5>
+                <p class="col-lg-6 col-md-6 col-sm-12 col-xs-12 text-dark text-justify">
+                    Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore <br>
+                    et dolore magna aliqua. Ut enim ad minim veniam.
+                    quis nostrud exercitation ullamco labo risnisi ut aliquip ex ea commodo consequat. <br> <br>
+                    Duis aute irure dolor in reprehend voluptate velit esse cillum.<br>
+                    dolore magnam aliquam quaerat eu fugiat nulla pariatuream.<br><br>
+                    Voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos tempora incidunt
+                    ut
+                    labore et dolore magnam aliquam qui ratione voluptatem sequi nesciuntquaerat voluptatem.<br>
+                    </pre>
+            </div>
+        </div>
+    </div>
+    <!-- end of Container -->
+    <!-- Container with head txt & txt -->
+    <div class="jumbotron text-center bg-light" style="margin-bottom: 0; border-radius: 0;">
+        <h2 class="text-dark fonts"><span class="text-primary">OUR</span> PROJECTS</h2>
+        <p class="font-weight-normal p-1 pargfs text-dark">Business consulting excepteur sint occaecat cupidatat
+            consulting non proident,
+            sunt in<br> culpa qui officia deserunt laborum market.
+        </p>
+    </div>
+    <!-- end of Container -->
+    <!-- Cards with picHeaders , title , txt & btn -->
+    <div class="jumbotron bg-white" style="margin-bottom: 0; border-radius: 0;">
+        <div class="container">
+            <div class="row" style="padding-top: 30px;">
+                <div class="col-lg-3 col-md-6 col-xl-3 col-sm-6 col-xs-12">
+                    <div class="card bg-light cardShadow" style="margin-bottom: 20px;">
+                        <img src="https://images.idgesg.net/images/article/2020/04/zoom_video_conferencing_online_meeting_remote_workers_one_user_connected_via_laptop_with_one_speaker_on_screen_2400x1600-100837450-large.jpg"
+                            alt="laptop" class="card-img-top h-100">
+                        <div class="card-body">
+                            <h5 class="card-title fonts text-primary">Saving Investments</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of the card's content.</p>
+                            <a href="#" class="btn btn-dark">More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-xl-3 col-sm-6 col-xs-12">
+                    <div class="card bg-light cardShadow" style="margin-bottom: 20px;">
+                        <img src="https://img2.helpnetsecurity.com/posts2020/remote_work_laptop.jpg" alt="working woman"
+                            class="card-img-top h-100">
+                        <div class="card-body">
+                            <h5 class="card-title fonts text-primary">Online Consolting</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of the card's content.</p>
+                            <a href="#" class="btn btn-dark">More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-xl-3 col-sm-6 col-xs-12">
+                    <div class="card bg-light cardShadow" style="margin-bottom: 20px;">
+                        <img src="https://i.pinimg.com/originals/0d/5e/00/0d5e0089f3879b1a84a68f0fc49bfac5.jpg"
+                            alt="team work" class="card-img-top h-100">
+                        <div class="card-body">
+                            <h5 class="card-title fonts text-primary">Investment Bank</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of the card's content.</p>
+                            <a href="#" class="btn btn-dark">More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-xl-3 col-sm-6 col-xs-12">
+                    <div class="card bg-light cardShadow">
+                        <img src="https://agwebtest.com/wp-content/uploads/2018/05/INTERNET-1.jpg" alt="analystics"
+                            class="card-img-top h-100">
+                        <div class="card-body">
+                            <h5 class="card-title fonts text-primary">Finance Analysis</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of the card's content.</p>
+                            <a href="#" class="btn btn-dark">More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Cards with picHeaders , title , txt & btn -->
+    <!-- Container with pic in the left & txt , cards on the right -->
+    <div class="jumbotron bg-purple" style="margin-bottom: 0; border-radius: 0;">
+        <div class="container mt-4 mb-4 pt-4 pb-4 bg-transparent">
+            <div class="row">
+                <div class="col-lg-5 col-md-12 col-xl-5 col-sm-12 col-xs-12">
+                    <div class="mapouter">
+                        <div class="gmap_canvas"><iframe width="600" height="500" id="gmap_canvas"
+                                src="https://maps.google.com/maps?q=enset%20mo&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                                frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a
+                                href="https://putlocker-is.org"></a><br>
+                            <style>
+                                .mapouter {
+                                    position: relative;
+                                    text-align: right;
+                                }
+                            </style><a href="https://www.embedgooglemap.net">embedgooglemap.net</a>
+                            <style>
+                                .gmap_canvas {
+                                    overflow: hidden;
+                                    background: none !important;
+                                }
+                            </style>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-7 col-md-12 col-xl-7 col-sm-12 col-xs-12">
+                    <h3 class="pb-4">Our passion is to work hard and deliver outstanding results.</h3>
+                    <p class="text-dark pb-5">Perspiciatis unde omnis iste natus error sit voluptatem accusantium
+                        accusantium laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore.</p>
+                    <pre class="fonts pb-4">
+                        Ideas for your business
+
+                        Performing at high levels
+
+                        Financial investment planning
+
+                        Strategic & commercial approach
+
+                    </pre>
+                    <div class="row">
+                        <div class="col-lg-4 col-md-4 col-xl-4 col-sm-4 col-12">
+                            <div class="container bg-white fonts text-center decor">
+                                <div class="font-weight-bolder pt-3">880+</div>
+                                <div class="dropdown-divider"></div>
+                                <div class="font-weight-bolde text-primary">PROJECTS</div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-xl-4 col-sm-4 col-12">
+                            <div class="container bg-white text-center fonts decor">
+                                <div class="font-weight-bolder pt-3">676+</div>
+                                <div class="dropdown-divider"></div>
+                                <div class="font-weight-bolde text-primary">CLIENTS</div>
+                            </div>
+                        </div>
+                        <div class="container col-lg-4 col-md-4 col-xl-4 col-sm-4 col-12">
+                            <div class="container bg-white fonts text-center decor">
+                                <div class="font-weight-bolder pt-3">102+</div>
+                                <div class="dropdown-divider"></div>
+                                <div class="font-weight-bolde text-primary">AWARDS</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Container with pic in the left & txt , cards on the right -->
+    <!-- Container with head , txt -->
+    <div class="jumbotron text-center bg-light" style="margin-bottom: 0; border-radius: 0;">
+        <h2 class="text-dark fonts"><span class="text-primary">OUR</span> SERVICES</h2>
+        <p class="font-weight-normal p-1 pargfs text-center text-dark">Business consulting excepteur sint occaecat
+            cupidatat consulting non proident,
+            sunt in <br> culpa qui officia deserunt laborum market.
+        </p>
+    </div> <!-- Card with head ,subT, txt & btn -->
+
+    <!-- Card with head ,subT, txt & btn -->
+    <div class="jumbotron bg-white" style="margin-bottom: 0; border-radius: 0;">
+        <div class="container bg-transparent">
+            <div class="row" style="padding-top: 30px;">
+                <div class="col-lg-3 col-md-6 col-xl-3 col-sm-6 col-xs-12">
+                    <div class="card bg-light cardShadow" style="margin-bottom: 20px;">
+                        <h5 class="card-header fonts text-primary">Contant Marketing</h5>
+                        <div class="card-body">
+                            <p class="card-subtitle font-weight-bold">Market Plan</p>
+                            <div class="dropdown-divider"></div>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of the card's content.</p>
+                            <a href="#" class="btn btn-outline-info">More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-xl-3 col-sm-6 col-xs-12">
+                    <div class="card bg-light cardShadow" style="margin-bottom: 20px;">
+                        <h5 class="card-header fonts text-primary">Saving Investments</h5>
+                        <div class="card-body">
+                            <p class="card-subtitle font-weight-bold">Finance Plan</p>
+                            <div class="dropdown-divider"></div>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of the card's content.</p>
+                            <a href="#" class="btn btn-outline-info">More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-xl-3 col-sm-6 col-xs-12">
+                    <div class="card bg-light cardShadow" style="margin-bottom: 20px;">
+                        <h5 class="card-header fonts text-primary">Detail Report</h5>
+                        <div class="card-body">
+                            <p class="card-subtitle font-weight-bold">Detail Plan</p>
+                            <div class="dropdown-divider"></div>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of the card's content.</p>
+                            <a href="#" class="btn btn-outline-info">More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-xl-3 col-sm-6 col-xs-12">
+                    <div class="card bg-light cardShadow" style="margin-bottom: 20px;">
+                        <h5 class="card-header fonts text-primary">Investment Plan</h5>
+                        <div class="card-body">
+                            <p class="card-subtitle font-weight-bold">Business Plan</p>
+                            <div class="dropdown-divider"></div>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of the card's content.</p>
+                            <a href="#" class="btn btn-outline-info align-content-center">More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <!-- End Card with head ,subT, txt & btn -->
+    <!-- Container with head , txt -->
+    <div class="jumbotron text-center bg-light" style="margin-bottom: 0; border-radius: 0;">
+        <h2 class="text-dark fonts"><span class="text-primary">OUR</span> TEAM</h2>
+        <p class="font-weight-normal p-1 pargfs text-center text-dark">Business consulting excepteur sint occaecat
+            cupidatat consulting non proident,
+            sunt in <br> culpa qui officia deserunt laborum market.
+        </p>
+    </div>
+    <!-- End Container with head , txt -->
+    <!-- Card with pic ,head & txt -->
+    <div class="jumbotron bg-white" style="border-radius: 0; margin-bottom: 0;">
+        <div class="container">
+            <div class="row" style="padding-top: 30px;">
+                <div class="col-lg-3 col-md-6 col-xl-3 col-sm-6 col-xs-12">
+                    <div class="card bg-light text-center cardShadow" style="margin-bottom: 20px;">
+                        <img src="https://img2.helpnetsecurity.com/posts2020/remote_work_laptop.jpg" alt="laptop"
+                            class="card-img-top">
+                        <a href="#" class="card-body btn fonts btn-outline-primary">
+                            <h5 class="card-title fonts">Jamara Karle</h5>
+                            <p class="card-subtitle">Founder</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-xl-3 col-sm-6 col-xs-12">
+                    <div class="card bg-light text-center cardShadow" style="margin-bottom: 20px;">
+                        <img src="https://cdn.pixabay.com/photo/2015/01/08/18/29/entrepreneur-593358_960_720.jpg" alt="working woman"
+                            class="card-img-top">
+                        <a href="#" class="card-body btn fonts btn-outline-primary">
+                            <h5 class="card-title fonts">Keir Prestonly</h5>
+                            <p class="card-subtitle">Co-Founder</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-xl-3 col-sm-6 col-xs-12">
+                    <div class="card bg-light cardShadow text-center" style="margin-bottom: 20px;">
+                        <img src="https://cdn.pixabay.com/photo/2016/02/07/21/03/computer-1185626_960_720.jpg" alt="team work"
+                            class="card-img-top">
+                        <a href="#" class="card-body btn fonts btn-outline-primary">
+                            <h5 class="card-title fonts">Finley Walkeror</h5>
+                            <p class="card-subtitle">Devloper</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-xl-3 col-sm-6 col-xs-12">
+                    <div class="card bg-light text-center cardShadow">
+                        <img src="https://cdn.pixabay.com/photo/2015/01/08/18/30/entrepreneur-593371_960_720.jpg" alt="analystics"
+                            class="card-img-top">
+                        <a href="#" class="card-body btn fonts btn-outline-primary">
+                            <h5 class="card-title fonts">Lenethi Miloler</h5>
+                            <p class="card-subtitle">Designer</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Card with pic ,head & txt -->
+    <!-- footer -->
+    <div class="jumbotron bg-dark" style="margin-bottom: 0; border-radius: 0;">
+        <div class="container">
+            <div class="row">
+                <div class="col-auto">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-12 col-sm-12 col-12">
+                            <div>
+                                <h3 class="fonts text-justify text-light">Company Name</h3>
+                                <div class="dropdown-divider"></div>
+                                <p class="pt-2 pb-2 pr-2 text-justify pargfs text-light">Nemo enim enim voluptatem quia
+                                    voluptas sit aspernatur aut odit aut fugit, sed quia consequ magni dolores eos qui
+                                    ratione voluptatem.</p>
+                                <div class="row pt-5">
+                                    <button class="m-2 btn btn-outline-primary roundedBtn"><i
+                                            class="fa fa-facebook-square"></i></button>
+                                    <button class="m-2 btn btn-outline-danger roundedBtn"><i
+                                            class="fa fa-google"></i></button>
+                                    <button class="m-2 btn btn-outline-warning roundedBtn"><i
+                                            class="fa fa-instagram"></i></button>
+                                    <button class="m-2 btn btn-outline-light roundedBtn"><i
+                                            class="fa fa-github"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-5 col-md-12 col-sm-12 col-12 py-2">
+                            <div class="container">
+                                <h5 class="fonts text-primary">Quick Links</h5>
+                                <div class="dropdown-divider"></div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <ul class="p-2" style="list-style-type: none;">
+                                            <li class="text-light py-1">
+                                                <i class="fa fa-angle-right"></i><span class="fonts col-6">News</span>
+                                            </li>
+                                            <li class="text-light py-1">
+                                                <i class="fa fa-angle-right"></i><span
+                                                    class="fonts col-6">Community</span>
+                                            </li>
+                                            <li class="text-light py-1">
+                                                <i class="fa fa-angle-right"></i><span
+                                                    class="fonts col-6">History</span>
+                                            </li>
+                                            <li class="text-light py-1">
+                                                <i class="fa fa-angle-right"></i><span
+                                                    class="fonts col-6">Portfolio</span>
+                                            </li>
+                                            <li class="text-light py-1">
+                                                <i class="fa fa-angle-right"></i><span class="fonts col-6">Safety</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-6">
+                                        <ul class="p-2" style="list-style-type: none;">
+                                            <li class="text-light py-2">
+                                                <i class="fa fa-angle-right"></i><span
+                                                    class="fonts col-6">Construction</span>
+                                            </li>
+                                            <li class="text-light py-2">
+                                                <i class="fa fa-angle-right"></i><span class="fonts col-6">Case
+                                                    studies</span>
+                                            </li>
+                                            <li class="text-light py-2">
+                                                <i class="fa fa-angle-right"></i><span class="fonts col-6">Blog
+                                                    detail</span>
+                                            </li>
+                                            <li class="text-light py-2">
+                                                <i class="fa fa-angle-right"></i><span class="fonts col-6">Sales
+                                                    Services</span>
+                                            </li>
+                                            <li class="text-light py-2">
+                                                <i class="fa fa-angle-right"></i><span class="fonts col-6">Services
+                                                    detail</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-12 col-sm-12 col-12 pt-2">
+                            <div>
+                                <h5 class="fonts text-primary">Get in Touch</h5>
+                                <div class="dropdown-divider"></div>
+                                <div class="row pt-2">
+                                    <p class="col-12 p-2 fa fa-map-marker text-primary">
+                                        <span class="pl-2 pargfs fonts font-weight-light text-light"> Street 512 Morocco</span>
+                                    </p>
+                                    <p class="col-12 p-2 fa fa-envelope text-primary">
+                                        <span class="pl-2 fonts font-weight-light text-white"> addyour@emailhere</span>
+                                    </p>
+                                    <p class="col-12 p-2 fa fa-phone text-primary">
+                                        <span class="pl-2 fonts font-weight-light text-white"> (+212) 68745875445</span>
+                                    </p>
+                                    <p class="col-12 p-2 fa fa-globe text-primary">
+                                        <span class="pl-2 fonts font-weight-light text-white">yourwebsitenamehere</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- footer copy right -->
+    <div class="container-fluid bg-dark">
+        <div class="container fonts bg-transparent">
+            <div class="row">
+                <p class="col-lg-6 col-md-6 col-sm-12 col-xs-12 text-center text-light">© Copyright Meggo 2022. All
+                    Rights Reserved.</p>
+                <p class="col-lg-6 col-md-6 col-sm-12 col-xs-12 text-center text-light">Design and Developed by:
+                    <span class="alert-link text-primary">Meggouri Ismail</span>
+                </p>
+            </div>
+        </div>
+    </div>
+    <!--  End of the footer copy right -->
+    <!--  End of the footer -->
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

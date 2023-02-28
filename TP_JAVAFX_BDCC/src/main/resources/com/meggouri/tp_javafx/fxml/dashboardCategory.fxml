@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="620.0" prefWidth="880.0" styleClass="container" stylesheets="@../style/style.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.meggouri.tp_javafx.presentation.controllers.CategoryController">
+   <children>
+      <GridPane layoutX="164.0" layoutY="113.0" prefHeight="132.0" prefWidth="546.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="304.0" minWidth="10.0" prefWidth="193.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="383.0" minWidth="10.0" prefWidth="383.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="55.4" minHeight="10.0" prefHeight="55.4" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="42.8" minHeight="0.20000000000000284" prefHeight="0.20000000000000284" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="46.4" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="114.00000000000001" minHeight="83.00000000000001" prefHeight="83.20000000000002" />
+        </rowConstraints>
+         <children>
+            <Label alignment="CENTER" contentDisplay="CENTER" text="Name">
+               <font>
+                  <Font name="Berlin Sans FB" size="18.0" />
+               </font>
+            </Label>
+             <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                 <Line endX="230.99996948242188" layoutX="107.0" layoutY="39.0" startX="-100.0" styleClass="border-bottom" />
+                 <TextField fx:id="category_txt" layoutX="7.0" layoutY="4.0" prefHeight="36.0" prefWidth="333.0" promptText="name" />
+             </Pane>
+            <Button mnemonicParsing="false" onAction="#addCat" prefHeight="36.0" prefWidth="131.0" stylesheets="@../style/style.css" text="Add" GridPane.rowIndex="3" />
+         </children>
+      </GridPane>
+      <TableView fx:id="cat_tableView" layoutX="30.0" layoutY="267.0" prefHeight="354.0" prefWidth="806.0">
+        <columns>
+          <TableColumn fx:id="id_cell" prefWidth="173.2000026702881" text="ID" />
+          <TableColumn fx:id="Name_cell" prefWidth="631.2000061035156" text="C2" />
+        </columns>
+      </TableView>
+      <Label alignment="TOP_CENTER" layoutX="187.0" layoutY="38.0" prefHeight="50.0" prefWidth="490.0" text="Categories Management" textAlignment="RIGHT">
+         <font>
+            <Font size="34.0" />
+         </font>
+         <effect>
+            <Blend />
+         </effect>
+      </Label>
+   </children>
+</AnchorPane>

@@ -4,7 +4,7 @@
       layout:decorate="template1.html">
 <head>
   <meta charset="UTF-8">
-  <title>New Patient</title>
+  <title>Edit Patient</title>
 </head>
 <body>
 <div layout:fragment="content1">
@@ -16,12 +16,16 @@
           <div class="p-3">
             <form th:action="@{/savePatient}" method="post">
               <div class="mb-2">
+                <label class="form-label">ID</label> <label th:text="${patient.id}"></label>
+                <input type="hidden" name="id" class="form-control" th:value="${patient.id}">
+              </div>
+              <div class="mb-2">
                 <label class="form-label">Name</label>
                 <input type="text" name="nom" class="form-control" th:value="${patient.nom}">
                 <span class="text-danger" th:errors="${patient.nom}"></span>
               </div>
               <div class="mb-2">
-                <label class="form-label">Date de Naissance</label>
+                <label class="form-label">Date Naissance</label>
                 <input type="date" name="dateNaissance" class="form-control" th:value="${patient.dateNaissance}">
                 <span class="text-danger" th:errors="${patient.dateNaissance}"></span>
               </div>
@@ -35,7 +39,7 @@
                 <input type="text" name="score" class="form-control" th:value="${patient.score}">
                 <span class="text-danger" th:errors="${patient.score}"></span>
               </div>
-              <button class="btn btn-success">Save</button>
+              <button class="btn btn-success">Update</button>
             </form>
           </div>
         </div>

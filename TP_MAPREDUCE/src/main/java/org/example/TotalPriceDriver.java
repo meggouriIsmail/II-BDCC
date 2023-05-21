@@ -2,6 +2,7 @@ package org.example;
 
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.Path;
+import org.apache.hadoop.io.DoubleWritable;
 import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Job;
@@ -18,10 +19,10 @@ public class TotalPriceDriver {
         job.setReducerClass(TotalPriceReducer.class);
         //les types de sortie de la fonction map
         job.setMapOutputKeyClass(Text.class);
-        job.setMapOutputValueClass(IntWritable.class);
+        job.setMapOutputValueClass(DoubleWritable.class);
         //les types de sotie du job
         job.setOutputKeyClass(Text.class);
-        job.setOutputValueClass(IntWritable.class);
+        job.setOutputValueClass(DoubleWritable.class);
         //le fomat input
         job.setInputFormatClass(TextInputFormat.class);
         //le path des fichiers input/output

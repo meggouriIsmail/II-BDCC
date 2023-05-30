@@ -12,7 +12,7 @@
         <div class="card">
             <div class="card-header"> Liste des patients</div>
             <div class="card-body">
-                <form method="get" th:action="@{index}">
+                <form method="get" th:action="@{/user/index}">
                     <label>Keyword: </label>
                     <input type="text" name="keyword" th:value="${keyword}">
                     <button type="submit" class="btn btn-info"><i class="bi bi-search"></i></button>
@@ -29,19 +29,19 @@
                         <td th:text="${p.dateNaissance}"></td>
                         <td th:text="${p.malade}"></td>
                         <td th:text="${p.score}"></td>
-                        <td>
-                            <a onclick="javascript:return confirm('Are you sure?')" class="btn btn-danger" th:href="@{delete(id=${p.id},keyword=${keyword},page=${currentPage})}">
+                        <td th:if="${#authorization.expression('hasRole(''ADMIN'')')}">
+                            <a onclick="javascript:return confirm('Are you sure?')" class="btn btn-danger" th:href="@{/admin/delete(id=${p.id},keyword=${keyword},page=${currentPage})}">
                                 <i class="bi bi-trash"></i>
                             </a>
                         </td>
-                        <td>
-                            <a class="btn btn-success" th:href="@{/editPatient(id=${p.id})}">Edit</a>
+                        <td th:if="${#authorization.expression('hasRole(''ADMIN'')')}">
+                            <a class="btn btn-success" th:href="@{/admin/editPatient(id=${p.id})}">Edit</a>
                         </td>
                     </tr>
                 </table>
                 <ul class="nav nav-pills">
                     <li th:each="p,item:${pages}">
-                        <a th:href="@{/index(page=${item.index},keyword=${keyword})}"
+                        <a th:href="@{/user/index(page=${item.index},keyword=${keyword})}"
                            th:class="${currentPage==item.index?'btn btn-info ms-1':'btn btn-outline-info ms-1'}"
                            th:text="${item.index}"></a>
                     </li>

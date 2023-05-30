@@ -11,7 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.UUID;
 
-@Service
+//@Service
 @Transactional
 @AllArgsConstructor
 public class AccountServiceImpl implements AccountService {

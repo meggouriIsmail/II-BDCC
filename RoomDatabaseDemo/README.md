@@ -1,6 +1,7 @@
 # Video and ScreenShots
 <h2>List of Countries</h2>
-![2](https://github.com/meggouriIsmail/II-BDCC/assets/76167322/d1ad3df1-112d-4251-b876-efe288410bbf)
+<img src="https://github.com/meggouriIsmail/II-BDCC/assets/76167322/d1ad3df1-112d-4251-b876-efe288410bbf"/>
+
 
 <h2>Add new country</h2>
 ![3](https://github.com/meggouriIsmail/II-BDCC/assets/76167322/1cbc48d5-7ccc-47cc-8dab-6cfb2cb77ed0)

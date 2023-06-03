@@ -8,6 +8,9 @@
 <h2>Update Country</h2>
 <img src="https://github.com/meggouriIsmail/II-BDCC/assets/76167322/3ed9eb95-4413-4e2d-b55c-0abf04d3da77"/>
 
+<h2>List of Countries after the update</h2>
+<img src="https://github.com/meggouriIsmail/II-BDCC/assets/76167322/f580f990-f545-4e8b-8fe9-7f6aff5ebb4d"/>
+
 <h2>Reset Database</h2>
 <img src="https://github.com/meggouriIsmail/II-BDCC/assets/76167322/d383ddaf-d59a-4ddd-acf3-0a5e57516f2b"/>
 

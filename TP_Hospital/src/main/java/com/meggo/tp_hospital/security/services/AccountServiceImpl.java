@@ -29,38 +29,40 @@ public class AccountServiceImpl implements AccountService {
                 .password(passwordEncoder.encode(password))
                 .email(email)
                 .build();
-        AppUser savedUser=userRepository.save(user);
-        return savedUser;
+//        AppUser savedUser=userRepository.save(user);
+//        return savedUser;
+        return null;
     }
 
     @Override
     public Role addNewRole(String role) {
-        Role appRole=roleRepository.findById(role).orElse(null);
-        if (appRole!=null) throw new RuntimeException("This role is already exist");
-        appRole=Role.builder()
-                .role(role)
-                .build();
-        return roleRepository.save(appRole);
+//        Role appRole=roleRepository.findById(role).orElse(null);
+//        if (appRole!=null) throw new RuntimeException("This role is already exist");
+//        appRole=Role.builder()
+//                .role(role)
+//                .build();
+//        return roleRepository.save(appRole);
+        return null;
     }
 
     @Override
     public void addRoleToUser(String username, String role) {
-        AppUser user=userRepository.findByUsername(username);
-        if (user==null) throw new RuntimeException("This user not existed");
-        Role appRole=roleRepository.findById(role).get();
-        if (appRole==null) throw new RuntimeException("This role not existed");
-        user.getRoles().add(appRole);
-        //userRepository.save(user);
-
+//        AppUser user=userRepository.findByUsername(username);
+//        if (user==null) throw new RuntimeException("This user not existed");
+//        Role appRole=roleRepository.findById(role).get();
+//        if (appRole==null) throw new RuntimeException("This role not existed");
+//        user.getRoles().add(appRole);
+//        //userRepository.save(user);
+//
     }
 
     @Override
     public void removeRoleFromUser(String username, String role) {
-        AppUser user=userRepository.findByUsername(username);
-        if (user==null) throw new RuntimeException("This user not existed");
-        Role appRole=roleRepository.findById(role).get();
-        if (appRole==null) throw new RuntimeException("This role not existed");
-        user.getRoles().remove(role);
+//        AppUser user=userRepository.findByUsername(username);
+//        if (user==null) throw new RuntimeException("This user not existed");
+//        Role appRole=roleRepository.findById(role).get();
+//        if (appRole==null) throw new RuntimeException("This role not existed");
+//        user.getRoles().remove(role);
     }
 
     @Override

@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 
 import java.util.List;
 
-@Entity
+//@Entity
 @Data @NoArgsConstructor @AllArgsConstructor @Builder
 public class AppUser {
     @Id

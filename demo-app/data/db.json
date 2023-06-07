@@ -17,6 +17,18 @@
       "name": "Keybord",
       "price": 500,
       "checked": false
+    },
+    {
+      "id": 2,
+      "name": "Printer",
+      "price": 7500,
+      "checked": true
+    },
+    {
+      "name": "Smart Phone",
+      "price": 2500,
+      "checked": true,
+      "id": 5
     }
   ]
 }

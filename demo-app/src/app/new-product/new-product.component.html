@@ -1,27 +1,21 @@
 <div class="p-3">
   <div class="card">
     <div class="card-body">
-      <form>
-        <div class="mb-3">
-          <label for="id" class="form-label">ID</label>
-          <input type="text" class="form-control" [(ngModel)]="product.id" name="product.id" id="product.id" aria-describedby="product id">
-          <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
-        </div>
+      <form [formGroup]="product" (ngSubmit)="saveProduct()" >
         <div class="mb-3">
           <label for="name" class="form-label">Name</label>
-          <input type="text" class="form-control" [(ngModel)]="product.name" id="product.name" name="product.name" aria-describedby="product name">
+          <input type="text" class="form-control" formControlName="name" id="name" aria-describedby="product name">
           <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
         </div>
         <div class="mb-3">
           <label for="price" class="form-label">Price</label>
-          <input type="number" class="form-control" [(ngModel)]="product.price" id="product.price" name="product.price">
+          <input type="number" class="form-control" formControlName="price" id="price">
         </div>
         <div class="mb-3 form-check">
-          <input type="checkbox" class="form-check-input" [(ngModel)]="product.checked" id="product.checked" name="product.checked">
-          <label class="form-check-label" for="exampleCheck1">Check</label>
+          <input type="checkbox" class="form-check-input" formControlName="checked" id="checked">
+          <label class="form-check-label" for="checked">Check</label>
         </div>
-        {{product|json}}
-        <button type="submit" class="btn btn-primary">Add</button>
+        <button type="submit" class="btn btn-primary">Add Product</button>
       </form>
     </div>
   </div>

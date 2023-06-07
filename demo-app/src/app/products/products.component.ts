@@ -10,6 +10,7 @@ import { Product } from '../models/product.model';
 })
 export class ProductsComponent implements OnInit {
   products: Array<Product> = [];
+  keyword: any;
 
   constructor(private productService: ProductService) {
   }
@@ -53,5 +54,9 @@ export class ProductsComponent implements OnInit {
         },
         error: err => console.error(err)
       })
+  }
+
+  searchProducts() {
+    this.products=this.products.filter(prod=>prod.name.toLowerCase().includes(this.keyword.toLowerCase()))
   }
 }

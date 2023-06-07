@@ -25,4 +25,8 @@ export class ProductService {
   public deleteProduct(productId:number){
     return this.http.delete<any>(`http://localhost:9090/products/${productId}`);
   }
+
+  public searchProducts(keyword:string):Observable<Array<Product>>{
+    return this.http.get<Array<Product>>(`http://localhost:9090/products?name_like=${keyword}`);
+  }
 }

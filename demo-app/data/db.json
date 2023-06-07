@@ -4,7 +4,7 @@
       "id": 1,
       "name": "Laptop",
       "price": 7500,
-      "checked": true
+      "checked": false
     },
     {
       "id": 3,
@@ -27,7 +27,7 @@
     {
       "name": "Smart Phone",
       "price": 2500,
-      "checked": true,
+      "checked": false,
       "id": 5
     }
   ]

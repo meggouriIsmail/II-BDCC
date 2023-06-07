@@ -4,13 +4,7 @@
       "id": 1,
       "name": "Laptop",
       "price": 7500,
-      "checked": true
-    },
-    {
-      "id": 2,
-      "name": "Printer",
-      "price": 5500,
-      "checked": true
+      "checked": false
     },
     {
       "id": 3,
@@ -22,7 +16,7 @@
       "id": 4,
       "name": "Keybord",
       "price": 500,
-      "checked": true
+      "checked": false
     }
   ]
 }

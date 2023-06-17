@@ -12,10 +12,10 @@ public interface myapi {
 
         @FormUrlEncoded // les paramètres seront envoyés dans le corps de la requête sous la forme de paires clé-valeur.
         @POST("inserttask.php")
-        Call<Task> adtask(@Field("task") String task);
+        Call<Task> addTask(@Field("task") String task);
 
 
         @GET("getalltasks.php")
-        Call<List<Task>> getalltasks();
+        Call<List<Task>> getAllTasks();
     }
 

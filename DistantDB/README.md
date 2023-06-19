@@ -4,7 +4,7 @@
 <h2>Video</h2>
 
 <video width="320" height="240" controls>
-  <source src="[movie.mp4](https://github.com/meggouriIsmail/II-BDCC/assets/76167322/ea90129b-78d3-428f-ade3-d2808fb65b59)" type="video/mp4">
+  <source src="https://github.com/meggouriIsmail/II-BDCC/assets/76167322/ea90129b-78d3-428f-ade3-d2808fb65b59" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 

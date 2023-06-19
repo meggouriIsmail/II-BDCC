@@ -14,6 +14,9 @@ public interface myapi {
         @POST("inserttask.php")
         Call<Task> addTask(@Field("task") String task);
 
+        @FormUrlEncoded
+        @POST("deletetask.php")
+        Call<Task> deleteTask(@Field("id") int id);
 
         @GET("getalltasks.php")
         Call<List<Task>> getAllTasks();

@@ -1,6 +1,9 @@
 package com.example.distantdb;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -9,7 +12,9 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.gson.Gson;
@@ -39,20 +44,28 @@ public class MainActivity extends AppCompatActivity {
 
     Button btn;
     EditText edit;
-    ListView listTasks;
-    ArrayAdapter<String> adapter = null;
+    RecyclerView listTasks;
+    MainAdapter adapter = null;
     // String url = "http://10.0.2.2:80/calendar/"
     String url = "http://192.168.0.156/calender/";
+    List<String> tasks = new ArrayList<>();
+    LinearLayoutManager linearLayoutManager;
 
-    ArrayList<String> DATA = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        listTasks = findViewById(R.id.listTasks);
+        listTasks = findViewById(R.id.recycler_view);
         btn = findViewById(R.id.addButton);
         edit = findViewById(R.id.editTask);
+
+        //Initialize linear layout manager
+        linearLayoutManager = new LinearLayoutManager(this);
+
+        // Set layout manager
+        listTasks.setLayoutManager(linearLayoutManager);
+
 
         //Création  d'instance de la classe Retrofit pour envoyer des requêtes HTTP et gérer les réponses.
         Retrofit retrofit = new Retrofit.Builder().baseUrl(url).addConverterFactory(GsonConverterFactory.create()).build();
@@ -69,7 +82,6 @@ public class MainActivity extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 process();
             }
         });
@@ -83,7 +95,7 @@ public class MainActivity extends AppCompatActivity {
             public void onResponse(Call<List<Task>> call, Response<List<Task>> response) {
                 List<Task> data = response.body();
 
-                adapter = new ArrayAdapter<>(MainActivity.this, android.R.layout.simple_list_item_1, Listin(data));
+                adapter = new MainAdapter(Listin(data), MainActivity.this);
                 listTasks.setAdapter(adapter);
 
 
@@ -110,8 +122,8 @@ public class MainActivity extends AppCompatActivity {
 
                 Log.i("reponse retrofit", response.toString());
                 Toast.makeText(getApplicationContext(), "Inseré avec success", Toast.LENGTH_LONG).show();
-                int id = Integer.parseInt(DATA.get(DATA.size() - 1).split(":")[0]);
-                DATA.add(String.valueOf(id + 1) + ": " + task);
+                int id = Integer.parseInt(tasks.get(tasks.size() - 1).split(":")[0]);
+                tasks.add(String.valueOf(id + 1) + ": " + task);
                 adapter.notifyDataSetChanged();
             }
 
@@ -124,12 +136,11 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-
-    ArrayList Listin(List<Task> l) {
+    List<String> Listin(List<Task> l) {
         for (int i = 0; i < l.size(); i++) {
-            DATA.add(l.get(i).getId() + ": " + l.get(i).getTask());
+            tasks.add(l.get(i).getId() + ": " + l.get(i).getTask());
         }
-        return DATA;
+        return tasks;
     }
 }
 

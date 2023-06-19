@@ -3,14 +3,8 @@
 
 <h2>Video</h2>
 
-
 https://github.com/meggouriIsmail/II-BDCC/assets/76167322/73a0bac6-e9af-401e-b73f-7b41b087e01a
 
-
-<video width="320" height="240" controls>
-  <source src="[https://github.com/meggouriIsmail/II-BDCC/assets/76167322/ea90129b-78d3-428f-ade3-d2808fb65b59](https://github.com/meggouriIsmail/II-BDCC/assets/76167322/73a0bac6-e9af-401e-b73f-7b41b087e01a)" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
 
 <h2>Design</h2>
 

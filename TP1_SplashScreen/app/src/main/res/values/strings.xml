@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name" translatable="false">TP1_SplashScreen</string>
+    <string name="login" translatable="false">LOGIN</string>
+    <string name="info" translatable="false">User Info\'s</string>
+    <string name="welcometext" translatable="false">Welcome</string>
+    <string name="user_name" translatable="false">User Name</string>
+    <string name="password" translatable="false">Password</string>
+</resources>

@@ -76,14 +76,13 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
 
         //Initialize variable
         TextView textTask;
-        ImageView btEdit, btDelete;
+        ImageView btDelete;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             // Assign variable
 
             textTask = itemView.findViewById(R.id.task);
-//        btEdit = itemView.findViewById(R.id.bt_edit);
             btDelete = itemView.findViewById(R.id.btn_delete);
         }
     }

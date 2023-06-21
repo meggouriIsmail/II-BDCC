@@ -7,7 +7,7 @@ import org.apache.spark.sql.SparkSession;
 public class Main {
     public static void main(String[] args) {
         SparkSession spark = SparkSession.builder()
-                .appName("Main")
+                .appName("VOLS")
                 .master("local[*]")
                 .getOrCreate();
 
@@ -39,15 +39,21 @@ public class Main {
         reservationsDF.createOrReplaceTempView("reservations");
         passagersDF.createOrReplaceTempView("passagers");
 
+        // Afficher pour charque vol, le nombre de passagers
         Dataset<Row> result = spark.sql(
                 "SELECT v.Id AS ID_VOL, v.Date_Depart, COUNT(DISTINCT r.Id_passanger) AS NOMBRE " +
-                        "FROM vols v " +
-                        "LEFT JOIN reservations r ON v.Id = r.Id_Vol " +
+                        "FROM vols v, " +
+                        "reservations r WHERE v.Id = r.Id_Vol " +
                         "GROUP BY v.Id, v.Date_Depart"
         );
 
-        result.show();
+        // Afficher la liste des vols en cours
+        Dataset<Row> currentVols = spark.sql(
+                "SELECT * FROM vols WHERE Date_Depart=CURRENT_DATE; "
+        );
 
+        result.show((int) result.count());
+        currentVols.show();
         spark.stop();
     }
 }

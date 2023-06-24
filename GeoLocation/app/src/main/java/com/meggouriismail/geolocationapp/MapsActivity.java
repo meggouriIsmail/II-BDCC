@@ -1,4 +1,4 @@
-package com.meggouri.geolocationapp;
+package com.meggouriismail.geolocationapp;
 
 import androidx.fragment.app.FragmentActivity;
 
@@ -10,7 +10,7 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
-import com.meggouri.geolocationapp.databinding.ActivityMapsBinding;
+import com.meggouriismail.geolocationapp.databinding.ActivityMapsBinding;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 

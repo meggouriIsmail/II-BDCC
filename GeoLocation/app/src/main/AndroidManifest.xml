@@ -9,7 +9,7 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/Theme.GeoLocationApp"
+        android:theme="@style/Theme.Design.NoActionBar"
         tools:targetApi="31">
 
         <!--
@@ -26,17 +26,21 @@
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyB3oTbLrt-lPELCdJUEsa0RRBs4Z3OIdL8" />
-
         <activity
             android:name=".MapsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".LoginActivity"
             android:exported="true"
-            android:label="@string/title_activity_maps">
+            android:theme="@style/AppTheme.NoActionBar"
+            android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".FormActivity" />
     </application>
 
 </manifest>

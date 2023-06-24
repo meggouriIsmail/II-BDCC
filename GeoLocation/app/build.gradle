@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace 'com.meggouri.geolocationapp'
+    namespace 'com.meggouriismail.geolocationapp'
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.meggouri.geolocationapp"
+        applicationId "com.meggouriismail.geolocationapp"
         minSdk 24
         targetSdk 33
         versionCode 1

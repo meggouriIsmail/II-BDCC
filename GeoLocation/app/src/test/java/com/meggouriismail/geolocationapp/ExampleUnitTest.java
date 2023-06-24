@@ -1,4 +1,4 @@
-package com.meggouri.geolocationapp;
+package com.meggouriismail.geolocationapp;
 
 import org.junit.Test;
 

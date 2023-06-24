@@ -23,7 +23,7 @@
             android:layout_height="94dp">
 
             <EditText
-                android:id="@+id/editTextEmail"
+                android:id="@+id/iptxt"
                 style="@style/modifiedEditText"
                 android:layout_width="359dp"
                 android:layout_height="62dp"
@@ -31,13 +31,12 @@
                 android:hint="@string/ip_address"
                 android:inputType="textEmailAddress"
                 android:maxLines="1"
-                android:text="@string/ip"
                 android:textSize="24sp" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button
-            android:id="@+id/loginButton"
+            android:id="@+id/findBtn"
             style="@style/loginButton"
             android:layout_gravity="right"
             android:text="FIND ME" />
@@ -50,27 +49,25 @@
         android:layout_marginTop="50dp">
 
         <TextView
-            android:id="@+id/textView1"
-            android:layout_width="380dp"
-            android:layout_height="70dp"
-            android:text="TextView"
+            android:id="@+id/region"
+            android:layout_width="340dp"
+            android:layout_height="match_parent"
             android:textColor="@color/black"
-            android:textSize="52dp" />
+            android:textSize="32dp" />
 
         <TextView
-            android:id="@+id/textView"
-            android:layout_width="380dp"
-            android:layout_height="70dp"
-            android:text="TextView"
+            android:id="@+id/country"
+            android:layout_width="340dp"
+            android:layout_height="match_parent"
             android:textColor="@color/black"
-            android:textSize="52dp" />
+            android:textSize="32dp" />
 
         <Button
             android:id="@+id/mapBtn"
             style="@style/mapButton"
             android:layout_gravity="center"
-            android:layout_marginTop="20dp"
-            android:text="FIND ME" />
+            android:layout_marginTop="10dp"
+            android:text="@string/locate_me" />
 
     </LinearLayout>
 

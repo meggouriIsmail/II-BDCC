@@ -9,6 +9,7 @@
     <string name="login_signup_hint">Don\'t have an account? Sign Up</string>
     <string name="login_name_hint">Name</string>
     <string name="login_mobile_number_hint">Mobile Number</string>
-    <string name="ip_address">IP Address</string>
+    <string name="ip_address">8.8.8.8</string>
     <string name="ip">172.16.10.10</string>
+    <string name="locate_me">Locate me</string>
 </resources>

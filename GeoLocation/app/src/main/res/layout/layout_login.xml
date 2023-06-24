@@ -30,6 +30,7 @@
             style="@style/modifiedEditText"
             android:hint="@string/login_email_hint"
             android:inputType="textEmailAddress"
+            android:textSize="20dp"
             android:maxLines="1" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -43,6 +44,7 @@
             style="@style/modifiedEditText"
             android:hint="@string/login_password_hint"
             android:inputType="textPassword"
+            android:textSize="20dp"
             android:maxLines="1" />
     </com.google.android.material.textfield.TextInputLayout>
 

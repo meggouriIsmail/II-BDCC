@@ -2,10 +2,13 @@
     <string name="app_name">GeoLocationApp</string>
     <string name="title_activity_maps">MapsActivity</string>
     <string name="register">REGISTER</string>
+    <string name="api_key">AIzaSyB3oTbLrt-lPELCdJUEsa0RRBs4Z3OIdL8</string>
     <string name="login_email_hint">Email</string>
     <string name="login_password_hint">Password</string>
     <string name="signup_login_hint">Already have an account? Sign In</string>
     <string name="login_signup_hint">Don\'t have an account? Sign Up</string>
     <string name="login_name_hint">Name</string>
     <string name="login_mobile_number_hint">Mobile Number</string>
+    <string name="ip_address">IP Address</string>
+    <string name="ip">172.16.10.10</string>
 </resources>

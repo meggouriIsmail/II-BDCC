@@ -4,12 +4,15 @@ import com.meggo.ebankingbackend.dtaos.CustomerDTO;
 import com.meggo.ebankingbackend.exceptions.CustomerNotFoundException;
 import com.meggo.ebankingbackend.services.BankAccountService;
 import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
 @AllArgsConstructor
+@Slf4j
+@CrossOrigin("*")
 public class CustomerRestController {
     private BankAccountService bankAccountService;
     @GetMapping("/customers")
@@ -19,6 +22,10 @@ public class CustomerRestController {
     @GetMapping("/customers/{id}")
     public CustomerDTO getCustomer(@PathVariable(name = "id") Long customerId) throws CustomerNotFoundException {
         return bankAccountService.getCustomer(customerId);
+    }
+    @GetMapping("/customers/search")
+    public List<CustomerDTO> searchCustomers(@RequestParam(name = "keyword",defaultValue = "") String keyword){
+        return bankAccountService.searchCustomers("%"+keyword+"%");
     }
     @PostMapping("/customers")
     public CustomerDTO saveCustomer(@RequestBody CustomerDTO customerDTO){

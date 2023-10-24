@@ -1,0 +1,10 @@
+type Query {
+    accountsList : [BankAccount],
+    accountById(id:String) : BankAccount
+}
+type BankAccount {
+    id : String,
+    balance : Float,
+    currency : String,
+    createdAt : Float
+}

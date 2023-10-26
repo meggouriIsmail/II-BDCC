@@ -1,6 +1,7 @@
 package com.meggouri.bankaccountservice.controllers;
 
 import com.meggouri.bankaccountservice.DTOs.AccountDTO;
+import com.meggouri.bankaccountservice.DTOs.AccountRequest;
 import com.meggouri.bankaccountservice.entities.Account;
 import com.meggouri.bankaccountservice.repositories.AccountRepository;
 import com.meggouri.bankaccountservice.services.AccountServiceImpl;
@@ -21,12 +22,12 @@ public class AccountController {
     }
 
     @PostMapping("/saveAccount")
-    private AccountDTO saveAccount(@RequestBody Account account){
+    private AccountDTO saveAccount(@RequestBody AccountRequest account){
         return accountService.saveAccount(account);
     }
 
     @PutMapping("/{id}")
-    private AccountDTO modifyAccount(@RequestBody Account account, @PathVariable("id") String id){
-        return accountService.putAccount(account, id);
+    private AccountDTO modifyAccount(@RequestBody AccountRequest account, @PathVariable("id") String id){
+        return accountService.updateAccount(account, id);
     }
 }

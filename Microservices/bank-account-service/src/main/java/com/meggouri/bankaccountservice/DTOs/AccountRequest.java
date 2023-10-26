@@ -6,9 +6,10 @@ import lombok.NoArgsConstructor;
 
 import java.util.Date;
 
-@Data @AllArgsConstructor @NoArgsConstructor
-public class AccountDTO {
-    private String id;
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+public class AccountRequest {
     private Date createdAt;
     private Double balance;
     private String currency;

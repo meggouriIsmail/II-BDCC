@@ -8,3 +8,15 @@ type BankAccount {
     currency : String,
     createdAt : Float
 }
+
+type Mutation {
+    saveAccount(accountRequest: AccountReq) : BankAccount,
+    updateAccount(id: String, accountRequest: AccountReq) : BankAccount,
+    deleteAccount(id: String) : BankAccount
+}
+
+input AccountReq {
+    balance : Float,
+    currency : String,
+    createdAt : Float
+}

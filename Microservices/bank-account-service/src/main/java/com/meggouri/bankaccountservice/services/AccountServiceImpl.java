@@ -1,6 +1,7 @@
 package com.meggouri.bankaccountservice.services;
 
 import com.meggouri.bankaccountservice.DTOs.AccountDTO;
+import com.meggouri.bankaccountservice.DTOs.AccountRequest;
 import com.meggouri.bankaccountservice.entities.Account;
 import com.meggouri.bankaccountservice.mappers.AccountMapper;
 import com.meggouri.bankaccountservice.repositories.AccountRepository;
@@ -8,6 +9,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.UUID;
 
 @Service
 @AllArgsConstructor
@@ -27,12 +29,18 @@ public class AccountServiceImpl implements IAccountService {
     }
 
     @Override
-    public AccountDTO saveAccount(Account account) {
+    public AccountDTO saveAccount(AccountRequest accountRequest) {
+        Account account = Account.builder()
+                .id(UUID.randomUUID().toString())
+                .balance(accountRequest.getBalance())
+                .createdAt(accountRequest.getCreatedAt())
+                .currency(accountRequest.getCurrency())
+                .build();
         return accountMapper.mapAccount(accountRepository.save(account));
     }
 
     @Override
-    public AccountDTO putAccount(Account account, String id) {
+    public AccountDTO updateAccount(AccountRequest account, String id) {
         Account toModify = accountRepository.findById(id).get();
         toModify.setBalance(account.getBalance());
         toModify.setCurrency(account.getCurrency());

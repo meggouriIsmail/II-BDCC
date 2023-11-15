@@ -38,7 +38,7 @@ public class graphController {
         return accountService.updateAccount(accountRequest, id);
     }
     @MutationMapping
-    public AccountDTO deleteAccount(@Argument String id) {
+    public AccountDTO deleteAccount (@Argument String id) {
         Account a =  accountRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException(String.format("This account %s doesn't exist",id)));
         accountRepository.delete(a);

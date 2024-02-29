@@ -14,9 +14,11 @@ export class ProductsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.http.get("localhost:8087/api/products").subscribe({
+    this.http.get("http://localhost:8087/api/products").subscribe({
       next : data => {
           this.products = data;
+          console.log(this.products);
+
       },
       error : err => {console.error(err);
       }

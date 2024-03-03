@@ -2,10 +2,8 @@ package com.meggouri.inventoryservice.web;
 
 import com.meggouri.inventoryservice.entities.Product;
 import com.meggouri.inventoryservice.repositories.ProductRepository;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.security.core.Authentication;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -26,5 +24,10 @@ public class ProductController {
     @GetMapping("/products/{id}")
     public Product getProduct(@RequestParam String id) {
         return productRepository.findById(id).get();
+    }
+
+    @GetMapping("/auth")
+    public Authentication authentication(Authentication authentication) {
+        return authentication;
     }
 }

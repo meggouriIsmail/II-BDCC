@@ -19,7 +19,7 @@ import java.util.stream.Stream;
 @Component
 public class JwtAuthConverter implements Converter<Jwt, AbstractAuthenticationToken> {
 
-    public final JwtGrantedAuthoritiesConverter jwtGrantedAuthoritiesConverter = new JwtGrantedAuthoritiesConverter();
+    private final JwtGrantedAuthoritiesConverter jwtGrantedAuthoritiesConverter = new JwtGrantedAuthoritiesConverter();
     @Override
     public AbstractAuthenticationToken convert(Jwt jwt) {
         Collection<GrantedAuthority> authorities = Stream.concat(
@@ -39,6 +39,6 @@ public class JwtAuthConverter implements Converter<Jwt, AbstractAuthenticationTo
         realmAccess = jwt.getClaim("realm_access");
         roles = (Collection<String>) realmAccess.get("roles");
 
-        return roles.stream().map(role -> new SimpleGrantedAuthority(role)).collect(Collectors.toSet());
+        return roles.stream().map(SimpleGrantedAuthority::new).collect(Collectors.toSet());
     }
 }

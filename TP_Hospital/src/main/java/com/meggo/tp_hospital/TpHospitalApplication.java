@@ -7,6 +7,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -20,27 +21,24 @@ import java.util.List;
 import java.util.stream.Stream;
 
 @SpringBootApplication
+@EnableJpaRepositories
 public class TpHospitalApplication {
-
-
-//    @Autowired
-//    private PatienRepository patientRepository;
     public static void main(String[] args) {
         SpringApplication.run(TpHospitalApplication.class, args);
     }
 
-//    @Bean
+    @Bean
     CommandLineRunner commandLineRunner(JdbcUserDetailsManager jdbcUserDetailsManager) {
 
         return args -> {
             jdbcUserDetailsManager.createUser(
-                    User.withUsername("user1").password(passwordEncoder().encode("12345")).roles("USER").build()
+                    User.withUsername("Ahmad").password(passwordEncoder().encode("12345")).roles("USER").build()
             );
             jdbcUserDetailsManager.createUser(
-                    User.withUsername("user2").password(passwordEncoder().encode("12345")).roles("USER").build()
+                    User.withUsername("Ismail").password(passwordEncoder().encode("12345")).roles("USER").build()
             );
             jdbcUserDetailsManager.createUser(
-                    User.withUsername("admin").password(passwordEncoder().encode("12345")).roles("USER","ADMIN").build()
+                    User.withUsername("Yahya").password(passwordEncoder().encode("12345")).roles("USER","ADMIN").build()
             );
         };
     }

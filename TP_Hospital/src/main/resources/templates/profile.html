@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="template1.html">
+<head>
+  <title>User Profile</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+    }
+
+    .profile-container {
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      max-width: 500px;
+      margin: 20px auto;
+    }
+
+    .profile-image {
+      border-radius: 50%;
+      width: 150px;
+      height: 150px;
+      margin: 0 auto 20px;
+      display: block;
+    }
+
+    .profile-info {
+      text-align: center;
+    }
+
+    .profile-info label {
+      font-weight: bold;
+      color: #333;
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .profile-info span {
+      color: #666;
+      display: block;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<div layout:fragment="content1">
+  <div class="profile-container">
+    <h1 style="text-align: center">User Profile</h1>
+    <div class="profile-image">
+      <img th:src="@{'https://www.gravatar.com/avatar/00000000000000000000000000000000?s=150&d=mp&r=pg'}" class="profile-image" alt="Profile Picture">
+    </div>
+    <div class="profile-info">
+
+      <label>Username:</label>
+      <span th:text="${#authentication.name}"></span>
+
+      <label>Email:</label>
+      <span th:text="${authorities}"></span>
+    </div>
+  </div>
+</div>
+</body>
+</html>

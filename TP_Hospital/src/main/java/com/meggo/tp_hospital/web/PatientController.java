@@ -2,15 +2,23 @@ package com.meggo.tp_hospital.web;
 
 import com.meggo.tp_hospital.entities.Patient;
 import com.meggo.tp_hospital.repositories.PatienRepository;
+import com.meggo.tp_hospital.security.services.AccountServiceImpl;
+import com.meggo.tp_hospital.security.services.UserDetailsServiceImp;
+import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
-import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.*;
-import jakarta.validation.Valid;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import java.util.stream.Collectors;
 
 
 @Controller
@@ -55,6 +63,35 @@ public class PatientController {
         Patient patient=patientRepository.findById(id).get();
         model.addAttribute("patient",patient);
         return "editPatient";
+    }
+    @PostMapping("/admin/editPatient")
+    public String updatePatient(@Valid Patient patient, BindingResult bindingResult, Long id){
+        if (bindingResult.hasErrors()){
+            return "editPatient";
+        }
+        Patient toModify = patientRepository.findById(id).get();
+
+        toModify.setDateNaissance(patient.getDateNaissance());
+        toModify.setMalade(patient.isMalade());
+        toModify.setScore(patient.getScore());
+        toModify.setNom(patient.getNom());
+        patientRepository.save(toModify);
+        return "redirect:/user/index?keyword="+patient.getNom();
+    }
+
+    @GetMapping("/profile")
+    public String userProfile(Model model) {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        if (authentication != null) {
+            UserDetails userDetails = (UserDetails) authentication.getPrincipal();
+            String username = userDetails.getUsername();
+            String authorities = userDetails.getAuthorities().stream().map(auth -> auth.getAuthority().split("_")[1]).collect(Collectors.joining(" "));
+            // You can access other user details as needed
+            model.addAttribute("user", username);
+            model.addAttribute("authorities", authorities);
+        }
+
+        return "profile";
     }
 
 }

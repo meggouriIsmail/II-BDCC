@@ -1,22 +1,72 @@
-<table class="table table-striped">
-	<thead>
-		<tr>
-			<th scope="col">ID</th>
-			<th scope="col">First Name</th>
-			<th scope="col">Last Name</th>
-			<th scope="col">CreateAt</th>
-			<th scope="col">Customer</th>
-		</tr>
-	</thead>
-	<tbody>
-    <tr *ngFor="let account of accounts">
-      <th scope="row">{{ account.accountId.substring(0,7) }}</th>
-      <td>
-        {{ account.balance }}
-      </td>
-      <td>{{ account.currency }}</td>
-      <td>{{ account.createAt }}</td>
-      <td>{{ account.customer?.firstName }} {{ account.customer?.lastName }}</td>
+<div class="account-container">
+  <h1>Account List</h1>
+  <div class="d-flex justify-content-between mb-3">
+    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addAccountModal">
+      Add Account
+    </button>
+  </div>
+  <div *ngIf="errorMessage" class="error-message">
+    {{ errorMessage }}
+  </div>
+
+  <table class="account-table">
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Type</th>
+      <th>Balance</th>
+      <th>Currency</th>
+      <th>Customer ID</th>
+      <th>Actions</th>
     </tr>
-	</tbody>
-</table>
+    </thead>
+    <tbody>
+    <tr *ngFor="let account of accounts">
+      <td>{{ account.accountId }}</td>
+      <td>{{ account.type }}</td>
+      <td>{{ account.balance | currency: account.currency }}</td>
+      <td>{{ account.currency }}</td>
+      <td>{{ account.customerId }}</td>
+      <td>
+        <button class="delete-button" (click)="deleteAccount(account.accountId)">Delete</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+<!-- Add Account Modal -->
+<div class="modal fade" id="addAccountModal" tabindex="-1" aria-labelledby="addAccountModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="addAccountModalLabel">Add Account</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form (ngSubmit)="addAccount()">
+          <div class="mb-3">
+            <label for="accountType" class="form-label">Type</label>
+            <input type="text" id="accountType" class="form-control" [(ngModel)]="newAccount.type" name="type" required />
+          </div>
+          <div class="mb-3">
+            <label for="accountBalance" class="form-label">Balance</label>
+            <input type="number" id="accountBalance" class="form-control" [(ngModel)]="newAccount.balance" name="balance" required />
+          </div>
+          <div class="mb-3">
+            <label for="accountCurrency" class="form-label">Currency</label>
+            <input type="text" id="accountCurrency" class="form-control" [(ngModel)]="newAccount.currency" name="currency" required />
+          </div>
+          <div class="mb-3">
+            <label for="accountCustomerId" class="form-label">Select Customer</label>
+            <select id="accountCustomerId" class="form-select" [(ngModel)]="newAccount.customerId" name="customerId" required>
+              <option *ngFor="let customer of customers" [value]="customer.id">
+                {{ customer.firstName }} {{ customer.lastName }}
+              </option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-primary">Add Account</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

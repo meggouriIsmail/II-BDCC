@@ -1,20 +1,70 @@
-<table class="table table-striped">
-	<thead>
-		<tr>
-			<th scope="col">ID</th>
-			<th scope="col">First Name</th>
-			<th scope="col">Last Name</th>
-			<th scope="col">Email</th>
-		</tr>
-	</thead>
-	<tbody>
-    <tr *ngFor="let customer of customers">
-      <th scope="row">{{ customer.id }}</th>
-      <td>
-        {{ customer.firstName }}
-      </td>
-      <td>{{ customer.lastName }}</td>
-      <td>{{ customer.email }}</td>
-    </tr>
-	</tbody>
-</table>
+<div class="customer-container">
+  <h1>Customer List</h1>
+  <!-- Add Customer Button -->
+  <div class="d-flex justify-content-between mb-3">
+    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addCustomerModal">
+      Add Customer
+    </button>
+  </div>
+  <div *ngIf="errorMessage" class="error-message">
+    {{ errorMessage }}
+  </div>
+
+  <div *ngIf="customers.length > 0">
+    <table class="customer-table">
+      <thead>
+      <tr>
+        <th>ID</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+        <th>Actions</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let customer of customers">
+        <td>{{ customer.id }}</td>
+        <td>{{ customer.firstName }}</td>
+        <td>{{ customer.lastName }}</td>
+        <td>{{ customer.email }}</td>
+        <td>
+          <button class="delete-button" (click)="deleteCustomer(customer.id)">Delete</button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div *ngIf="customers.length === 0 && !errorMessage">
+    <p>No customers available.</p>
+  </div>
+</div>
+
+<!-- Add Customer Modal -->
+<div class="modal fade" id="addCustomerModal" tabindex="-1" aria-labelledby="addCustomerModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="addCustomerModalLabel">Add Customer</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form (ngSubmit)="addCustomer()">
+          <div class="mb-3">
+            <label for="customerFirstName" class="form-label">First Name</label>
+            <input type="text" id="customerFirstName" class="form-control" [(ngModel)]="newCustomer.firstName" name="firstName" required />
+          </div>
+          <div class="mb-3">
+            <label for="customerLastName" class="form-label">Last Name</label>
+            <input type="text" id="customerLastName" class="form-control" [(ngModel)]="newCustomer.lastName" name="lastName" required />
+          </div>
+          <div class="mb-3">
+            <label for="customerEmail" class="form-label">Email</label>
+            <input type="email" id="customerEmail" class="form-control" [(ngModel)]="newCustomer.email" name="email" required />
+          </div>
+          <button type="submit" class="btn btn-primary">Add Customer</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

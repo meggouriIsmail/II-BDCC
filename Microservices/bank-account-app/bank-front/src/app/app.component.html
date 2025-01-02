@@ -1,28 +1,58 @@
-<nav class="navbar navbar-expand-sm navbar-light bg-light">
+<nav class="navbar navbar-expand-sm navbar-light bg-light shadow-sm">
   <div class="container-fluid">
+    <!-- Brand Logo -->
     <a class="navbar-brand" href="#">
-      <h1>Bank</h1>
+      <h1 class="text-primary">Bank</h1>
     </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+
+    <!-- Toggle Button for Mobile View -->
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+    <!-- Navigation Links -->
+    <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" routerLink="customers">Home</a>
+          <a class="nav-link" aria-current="page" routerLink="customers">
+            Customers
+          </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="accounts">Accounts</a>
+          <a class="nav-link" routerLink="accounts">
+            Accounts
+          </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+          <a class="nav-link" routerLink="transactions">
+            Transactions
+          </a>
         </li>
       </ul>
+
+      <!-- Search Form -->
       <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
+        <input
+          class="form-control me-2"
+          type="search"
+          placeholder="Search"
+          aria-label="Search"
+        />
+        <button class="btn btn-outline-primary" type="submit">
+          Search
+        </button>
       </form>
     </div>
   </div>
 </nav>
+
+<!-- Router Outlet for Dynamic Components -->
 <router-outlet></router-outlet>

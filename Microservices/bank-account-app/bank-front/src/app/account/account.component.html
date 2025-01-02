@@ -1,15 +1,17 @@
 <div class="account-container">
   <h1>Account List</h1>
-  <div class="d-flex justify-content-between mb-3">
+
+  <div class="d-flex justify-content-between mb-4">
     <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addAccountModal">
-      Add Account
+      <i class="bi bi-plus-circle"></i> Add Account
     </button>
   </div>
+
   <div *ngIf="errorMessage" class="error-message">
     {{ errorMessage }}
   </div>
 
-  <table class="account-table">
+  <table class="table table-striped">
     <thead>
     <tr>
       <th>ID</th>
@@ -22,13 +24,13 @@
     </thead>
     <tbody>
     <tr *ngFor="let account of accounts">
-      <td>{{ account.accountId }}</td>
+      <td>{{ account.accountId.substring(0,5) }}</td>
       <td>{{ account.type }}</td>
       <td>{{ account.balance | currency: account.currency }}</td>
       <td>{{ account.currency }}</td>
       <td>{{ account.customerId }}</td>
       <td>
-        <button class="delete-button" (click)="deleteAccount(account.accountId)">Delete</button>
+        <button class="btn btn-danger" (click)="deleteAccount(account.accountId)">Delete</button>
       </td>
     </tr>
     </tbody>
@@ -45,8 +47,11 @@
       <div class="modal-body">
         <form (ngSubmit)="addAccount()">
           <div class="mb-3">
-            <label for="accountType" class="form-label">Type</label>
-            <input type="text" id="accountType" class="form-control" [(ngModel)]="newAccount.type" name="type" required />
+            <label for="accountType" class="form-label">Account Type</label>
+            <select id="accountType" class="form-select" [(ngModel)]="newAccount.type" name="type" required>
+              <option value="SAVING_ACCOUNT">SAVING ACCOUNT</option>
+              <option value="CURRENT_ACCOUNT">CURRENT ACCOUNT</option>
+            </select>
           </div>
           <div class="mb-3">
             <label for="accountBalance" class="form-label">Balance</label>

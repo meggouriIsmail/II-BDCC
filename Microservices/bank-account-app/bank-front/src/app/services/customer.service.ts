@@ -22,8 +22,8 @@ export class CustomerService {
     return this.httpClient.post(`${this.baseUrl}`, customer);
   }
 
-  updateCustomer(id: number, customer: any): Observable<any> {
-    return this.httpClient.put(`${this.baseUrl}/${id}`, customer);
+  updateCustomer(customer: any): Observable<any> {
+    return this.httpClient.put<any>(`${this.baseUrl}/${customer.id}`, customer);
   }
 
   deleteCustomer(id: number): Observable<any> {

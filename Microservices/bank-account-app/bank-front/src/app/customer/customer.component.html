@@ -1,17 +1,18 @@
 <div class="customer-container">
   <h1>Customer List</h1>
-  <!-- Add Customer Button -->
-  <div class="d-flex justify-content-between mb-3">
-    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addCustomerModal">
-      Add Customer
+
+  <div class="d-flex justify-content-between mb-4">
+    <button class="btn btn-primary" (click)="openAddModal()">
+      <i class="bi bi-plus-circle"></i> Add Customer
     </button>
   </div>
+
   <div *ngIf="errorMessage" class="error-message">
     {{ errorMessage }}
   </div>
 
   <div *ngIf="customers.length > 0">
-    <table class="customer-table">
+    <table class="table table-striped">
       <thead>
       <tr>
         <th>ID</th>
@@ -28,7 +29,8 @@
         <td>{{ customer.lastName }}</td>
         <td>{{ customer.email }}</td>
         <td>
-          <button class="delete-button" (click)="deleteCustomer(customer.id)">Delete</button>
+          <button class="btn btn-warning" (click)="openEditModal(customer)">Edit</button>
+          <button class="btn btn-danger" (click)="deleteCustomer(customer.id)">Delete</button>
         </td>
       </tr>
       </tbody>
@@ -63,6 +65,35 @@
             <input type="email" id="customerEmail" class="form-control" [(ngModel)]="newCustomer.email" name="email" required />
           </div>
           <button type="submit" class="btn btn-primary">Add Customer</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Update Customer Modal -->
+<div class="modal fade" id="updateCustomerModal" tabindex="-1" aria-labelledby="updateCustomerModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="updateCustomerModalLabel">Update Customer</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form (ngSubmit)="updateCustomer()">
+          <div class="mb-3">
+            <label for="updateFirstName" class="form-label">First Name</label>
+            <input type="text" id="updateFirstName" class="form-control" [(ngModel)]="currentCustomer.firstName" name="firstName" required />
+          </div>
+          <div class="mb-3">
+            <label for="updateLastName" class="form-label">Last Name</label>
+            <input type="text" id="updateLastName" class="form-control" [(ngModel)]="currentCustomer.lastName" name="lastName" required />
+          </div>
+          <div class="mb-3">
+            <label for="updateEmail" class="form-label">Email</label>
+            <input type="email" id="updateEmail" class="form-control" [(ngModel)]="currentCustomer.email" name="email" required />
+          </div>
+          <button type="submit" class="btn btn-primary">Update Customer</button>
         </form>
       </div>
     </div>

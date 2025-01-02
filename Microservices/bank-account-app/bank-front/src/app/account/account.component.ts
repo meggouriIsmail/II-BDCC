@@ -45,15 +45,15 @@ export class AccountComponent implements OnInit {
       },
     });
   }
+
   addAccount(): void {
     this.accountService.createAccount(this.newAccount).subscribe({
       next: () => {
         this.loadAccounts();
         this.newAccount = { type: '', balance: 0, currency: '', customerId: '' };
 
-        // Close the modal using Bootstrap Modal API
         const modal = new bootstrap.Modal(document.getElementById('addAccountModal'));
-        modal.hide(); // Close the modal
+        modal.hide();
       },
       error: (err) => {
         console.error('Error adding account:', err);

@@ -7,12 +7,14 @@ import com.meggouri.accountservice.repositories.BankAccountRepository;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
 import java.util.List;
+import java.util.UUID;
 
 @RestController
 public class AccountController {
-    private BankAccountRepository accountRepository;
-    private CustomerRestClient customerRestClient;
+    private final BankAccountRepository accountRepository;
+    private final CustomerRestClient customerRestClient;
 
     public AccountController(BankAccountRepository accountRepository, CustomerRestClient customerRestClient) {
         this.accountRepository = accountRepository;
@@ -35,7 +37,8 @@ public class AccountController {
 
     @PostMapping("/accounts")
     public BankAccount addAccount(@RequestBody BankAccount bankAccount) {
-        // Perform validation or business logic if needed
+        bankAccount.setAccountId(UUID.randomUUID().toString());
+        bankAccount.setCreateAt(LocalDate.now());
         return accountRepository.save(bankAccount);
     }
 
